@@ -49,3 +49,7 @@ app.*.map.json
 
 # Claude Code local config
 .claude/
+
+# Signing keys
+*.jks
+*.keystore
