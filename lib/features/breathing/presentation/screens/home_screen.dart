@@ -32,7 +32,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
   void initState() {
     super.initState();
     _previewController = AnimationPhaseController(this);
-    _previewController.configure(const BreathingConfig());
+    _previewController.configure(
+      const BreathingConfig(inhaleDuration: 2, holdDuration: 2, exhaleDuration: 2),
+    );
+    _previewController.startCycle();
   }
 
   @override
