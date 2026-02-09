@@ -44,6 +44,11 @@ dev_dependencies:
   riverpod_generator: ^2.6.3
   flutter_launcher_icons: ^0.14.3
 
+# Workaround: analyzer_plugin 0.12.0 is incompatible with analyzer 7.x
+# used by build_runner. Pin to 0.13.0+ until upstream fixes the constraint.
+dependency_overrides:
+  analyzer_plugin: ^0.13.0
+
 flutter_launcher_icons:
   android: true
   ios: true
