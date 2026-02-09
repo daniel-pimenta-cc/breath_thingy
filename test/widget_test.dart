@@ -6,7 +6,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:breath_thingy/app.dart';
 
 void main() {
-  testWidgets('App starts and shows Breath Thingy title', (WidgetTester tester) async {
+  testWidgets('App starts and shows Breath Thingy title', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [

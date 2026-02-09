@@ -117,11 +117,7 @@ class _ControlButton extends StatelessWidget {
           color: color.withValues(alpha: 0.15),
           border: Border.all(color: color.withValues(alpha: 0.4), width: 2),
         ),
-        child: Icon(
-          icon,
-          size: size * 0.5,
-          color: color,
-        ),
+        child: Icon(icon, size: size * 0.5, color: color),
       ),
     );
   }

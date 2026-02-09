@@ -8,20 +8,14 @@ abstract final class AppRouter {
   static final router = GoRouter(
     initialLocation: '/',
     routes: [
-      GoRoute(
-        path: '/',
-        builder: (context, state) => const HomeScreen(),
-      ),
+      GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
       GoRoute(
         path: '/breathe',
         pageBuilder: (context, state) => CustomTransitionPage(
           child: const BreathingScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
-              opacity: CurvedAnimation(
-                parent: animation,
-                curve: Curves.easeIn,
-              ),
+              opacity: CurvedAnimation(parent: animation, curve: Curves.easeIn),
               child: child,
             );
           },

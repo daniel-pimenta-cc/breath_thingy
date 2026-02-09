@@ -29,10 +29,7 @@ class ParticleGatherPainter extends BreathingAnimationPainter {
     final rng = Random(123);
     return List.generate(80, (i) {
       return _Particle(
-        randomPos: Offset(
-          rng.nextDouble() * 2 - 1,
-          rng.nextDouble() * 2 - 1,
-        ),
+        randomPos: Offset(rng.nextDouble() * 2 - 1, rng.nextDouble() * 2 - 1),
         size: 2.0 + rng.nextDouble() * 4.0,
         speed: 0.5 + rng.nextDouble() * 0.5,
         orbitOffset: rng.nextDouble() * 2 * pi,
@@ -83,7 +80,11 @@ class ParticleGatherPainter extends BreathingAnimationPainter {
             center.dy + sin(orbitAngle) * circleRadius * pulseFactor,
           );
           opacity = 1.0;
-          color = Color.lerp(AppColors.inhaleBlue, AppColors.gold, 0.5 + sin(t * pi * 2) * 0.5)!;
+          color = Color.lerp(
+            AppColors.inhaleBlue,
+            AppColors.gold,
+            0.5 + sin(t * pi * 2) * 0.5,
+          )!;
 
         case BreathingPhase.exhale:
           final t = Curves.easeInBack.transform(progress.clamp(0.0, 1.0));
@@ -110,7 +111,12 @@ class ParticleGatherPainter extends BreathingAnimationPainter {
     }
   }
 
-  void _drawConnections(Canvas canvas, Offset center, double circleRadius, double halfSize) {
+  void _drawConnections(
+    Canvas canvas,
+    Offset center,
+    double circleRadius,
+    double halfSize,
+  ) {
     final t = progress;
     final connectionPaint = Paint()
       ..color = AppColors.gold.withValues(alpha: 0.15)
@@ -118,7 +124,10 @@ class ParticleGatherPainter extends BreathingAnimationPainter {
 
     for (int i = 0; i < _particles.length; i++) {
       final pi2 = _particles[i];
-      final angle1 = (2 * pi * i / _particles.length) + pi2.orbitOffset + t * pi * 2 * pi2.speed;
+      final angle1 =
+          (2 * pi * i / _particles.length) +
+          pi2.orbitOffset +
+          t * pi * 2 * pi2.speed;
       final pos1 = Offset(
         center.dx + cos(angle1) * circleRadius,
         center.dy + sin(angle1) * circleRadius,
@@ -126,7 +135,10 @@ class ParticleGatherPainter extends BreathingAnimationPainter {
 
       for (int j = i + 1; j < min(i + 5, _particles.length); j++) {
         final pj = _particles[j];
-        final angle2 = (2 * pi * j / _particles.length) + pj.orbitOffset + t * pi * 2 * pj.speed;
+        final angle2 =
+            (2 * pi * j / _particles.length) +
+            pj.orbitOffset +
+            t * pi * 2 * pj.speed;
         final pos2 = Offset(
           center.dx + cos(angle2) * circleRadius,
           center.dy + sin(angle2) * circleRadius,
@@ -134,7 +146,9 @@ class ParticleGatherPainter extends BreathingAnimationPainter {
 
         final dist = (pos1 - pos2).distance;
         if (dist < 60) {
-          connectionPaint.color = AppColors.gold.withValues(alpha: 0.15 * (1 - dist / 60));
+          connectionPaint.color = AppColors.gold.withValues(
+            alpha: 0.15 * (1 - dist / 60),
+          );
           canvas.drawLine(pos1, pos2, connectionPaint);
         }
       }

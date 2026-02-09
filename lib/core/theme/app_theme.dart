@@ -5,16 +5,15 @@ import 'app_colors.dart';
 
 abstract final class AppTheme {
   static ThemeData get dark {
-    final textTheme = GoogleFonts.poppinsTextTheme(
-      ThemeData.dark().textTheme,
-    ).copyWith(
-      bodySmall: GoogleFonts.inter(color: AppColors.textSecondary),
-      bodyMedium: GoogleFonts.inter(color: AppColors.textPrimary),
-      bodyLarge: GoogleFonts.inter(color: AppColors.textPrimary),
-      labelSmall: GoogleFonts.inter(color: AppColors.textMuted),
-      labelMedium: GoogleFonts.inter(color: AppColors.textSecondary),
-      labelLarge: GoogleFonts.inter(color: AppColors.textPrimary),
-    );
+    final textTheme = GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme)
+        .copyWith(
+          bodySmall: GoogleFonts.inter(color: AppColors.textSecondary),
+          bodyMedium: GoogleFonts.inter(color: AppColors.textPrimary),
+          bodyLarge: GoogleFonts.inter(color: AppColors.textPrimary),
+          labelSmall: GoogleFonts.inter(color: AppColors.textMuted),
+          labelMedium: GoogleFonts.inter(color: AppColors.textSecondary),
+          labelLarge: GoogleFonts.inter(color: AppColors.textPrimary),
+        );
 
     return ThemeData(
       useMaterial3: true,
@@ -45,9 +44,7 @@ abstract final class AppTheme {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: BorderSide(
-            color: AppColors.softTeal.withValues(alpha: 0.1),
-          ),
+          side: BorderSide(color: AppColors.softTeal.withValues(alpha: 0.1)),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -72,9 +69,7 @@ abstract final class AppTheme {
         trackHeight: 4,
       ),
       iconButtonTheme: IconButtonThemeData(
-        style: IconButton.styleFrom(
-          foregroundColor: AppColors.softTeal,
-        ),
+        style: IconButton.styleFrom(foregroundColor: AppColors.softTeal),
       ),
     );
   }

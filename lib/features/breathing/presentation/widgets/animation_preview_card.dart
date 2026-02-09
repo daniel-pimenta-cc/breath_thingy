@@ -69,7 +69,9 @@ class AnimationPreviewCard extends StatelessWidget {
                 style: GoogleFonts.inter(
                   fontSize: 12,
                   fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
-                  color: isSelected ? AppColors.softTeal : AppColors.textSecondary,
+                  color: isSelected
+                      ? AppColors.softTeal
+                      : AppColors.textSecondary,
                 ),
                 textAlign: TextAlign.center,
                 maxLines: 1,

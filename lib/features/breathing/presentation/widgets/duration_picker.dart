@@ -62,7 +62,8 @@ class DurationPicker extends StatelessWidget {
             value: value.toDouble(),
             min: BreathingDefaults.minDuration.toDouble(),
             max: BreathingDefaults.maxDuration.toDouble(),
-            divisions: BreathingDefaults.maxDuration - BreathingDefaults.minDuration,
+            divisions:
+                BreathingDefaults.maxDuration - BreathingDefaults.minDuration,
             onChanged: (v) => onChanged(v.round()),
           ),
         ),

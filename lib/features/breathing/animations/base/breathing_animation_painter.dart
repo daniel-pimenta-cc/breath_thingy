@@ -4,8 +4,7 @@ import '../../domain/models/breathing_phase.dart';
 import 'animation_phase_controller.dart';
 
 abstract class BreathingAnimationPainter extends CustomPainter {
-  BreathingAnimationPainter(this.controller)
-      : super(repaint: controller);
+  BreathingAnimationPainter(this.controller) : super(repaint: controller);
 
   final AnimationPhaseController controller;
 

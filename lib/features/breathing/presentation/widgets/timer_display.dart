@@ -4,11 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/theme/app_colors.dart';
 
 class TimerDisplay extends StatelessWidget {
-  const TimerDisplay({
-    super.key,
-    required this.remaining,
-    required this.total,
-  });
+  const TimerDisplay({super.key, required this.remaining, required this.total});
 
   final double remaining;
   final double total;

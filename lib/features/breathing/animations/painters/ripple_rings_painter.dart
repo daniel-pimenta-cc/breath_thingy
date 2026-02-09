@@ -32,8 +32,13 @@ class RippleRingsPainter extends BreathingAnimationPainter {
     }
   }
 
-  void _paintInhaleRing(Canvas canvas, Offset center, double maxRadius,
-      int index, double ringT) {
+  void _paintInhaleRing(
+    Canvas canvas,
+    Offset center,
+    double maxRadius,
+    int index,
+    double ringT,
+  ) {
     final t = progress;
     // Inner rings contract first (cascade)
     final delay = ringT * 0.3;
@@ -57,8 +62,13 @@ class RippleRingsPainter extends BreathingAnimationPainter {
     canvas.drawCircle(center, radius, paint);
   }
 
-  void _paintHoldRing(Canvas canvas, Offset center, double maxRadius,
-      int index, double ringT) {
+  void _paintHoldRing(
+    Canvas canvas,
+    Offset center,
+    double maxRadius,
+    int index,
+    double ringT,
+  ) {
     final t = progress;
     final baseRadius = maxRadius * (0.15 + ringT * 0.25);
     final pulse = sin(t * pi * 4 + index * 0.8) * maxRadius * 0.02;
@@ -66,11 +76,7 @@ class RippleRingsPainter extends BreathingAnimationPainter {
 
     // Color rotation: blue → lavender → rose → lavender
     final colorT = (sin(t * pi * 2 + index * 0.5) + 1) / 2;
-    final color = Color.lerp(
-      AppColors.inhaleBlue,
-      AppColors.lavender,
-      colorT,
-    )!;
+    final color = Color.lerp(AppColors.inhaleBlue, AppColors.lavender, colorT)!;
 
     final paint = Paint()
       ..color = color
@@ -81,8 +87,13 @@ class RippleRingsPainter extends BreathingAnimationPainter {
     canvas.drawCircle(center, radius, paint);
   }
 
-  void _paintExhaleRing(Canvas canvas, Offset center, double maxRadius,
-      int index, double ringT) {
+  void _paintExhaleRing(
+    Canvas canvas,
+    Offset center,
+    double maxRadius,
+    int index,
+    double ringT,
+  ) {
     final t = progress;
     // Outer rings expand first
     final delay = (1 - ringT) * 0.3;
@@ -106,8 +117,13 @@ class RippleRingsPainter extends BreathingAnimationPainter {
     canvas.drawCircle(center, radius, paint);
   }
 
-  void _paintIdleRing(Canvas canvas, Offset center, double maxRadius,
-      int index, double ringT) {
+  void _paintIdleRing(
+    Canvas canvas,
+    Offset center,
+    double maxRadius,
+    int index,
+    double ringT,
+  ) {
     final radius = maxRadius * (0.2 + ringT * 0.8);
     final paint = Paint()
       ..color = AppColors.inhaleBlue.withValues(alpha: 0.15)

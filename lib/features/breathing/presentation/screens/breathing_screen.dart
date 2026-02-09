@@ -56,9 +56,6 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
     final selectedStyle = ref.watch(breathingAnimStyleNotifierProvider);
     final configAsync = ref.watch(breathingConfigNotifierProvider);
 
-    // Sync animation controller with session state
-    _syncAnimController(sessionState);
-
     // Configure controller when config is available (on first build idle state)
     if (sessionState is BreathingSessionIdle) {
       configAsync.whenData((config) {
@@ -86,15 +83,16 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
                   // Top bar
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 8),
+                      horizontal: 16,
+                      vertical: 8,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
                           onPressed: () {
                             ref
-                                .read(
-                                    breathingSessionNotifierProvider.notifier)
+                                .read(breathingSessionNotifierProvider.notifier)
                                 .reset();
                             _animController.stop();
                             context.pop();
@@ -173,26 +171,28 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
 
   Widget _buildPhaseSection(BreathingSessionState state) {
     return switch (state) {
-      BreathingSessionRunning(phase: final phase) =>
-        PhaseIndicator(phase: phase),
-      BreathingSessionPaused(phase: final phase) =>
-        PhaseIndicator(phase: phase),
+      BreathingSessionRunning(phase: final phase) => PhaseIndicator(
+        phase: phase,
+      ),
+      BreathingSessionPaused(phase: final phase) => PhaseIndicator(
+        phase: phase,
+      ),
       BreathingSessionCompleted(totalCycles: final cycles) => Text(
-          'Concluído! $cycles ciclos',
-          style: GoogleFonts.poppins(
-            fontSize: 24,
-            fontWeight: FontWeight.w600,
-            color: AppColors.softTeal,
-          ),
+        'Concluído! $cycles ciclos',
+        style: GoogleFonts.poppins(
+          fontSize: 24,
+          fontWeight: FontWeight.w600,
+          color: AppColors.softTeal,
         ),
+      ),
       BreathingSessionIdle() => Text(
-          'Pronto para começar',
-          style: GoogleFonts.poppins(
-            fontSize: 20,
-            fontWeight: FontWeight.w400,
-            color: AppColors.textSecondary,
-          ),
+        'Pronto para começar',
+        style: GoogleFonts.poppins(
+          fontSize: 20,
+          fontWeight: FontWeight.w400,
+          color: AppColors.textSecondary,
         ),
+      ),
     };
   }
 
@@ -200,7 +200,7 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
     return switch (state) {
       BreathingSessionRunning(
         elapsed: final elapsed,
-        phaseDuration: final duration
+        phaseDuration: final duration,
       ) =>
         TimerDisplay(
           remaining: (duration - elapsed).clamp(0, duration),
@@ -208,7 +208,7 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
         ),
       BreathingSessionPaused(
         elapsed: final elapsed,
-        phaseDuration: final duration
+        phaseDuration: final duration,
       ) =>
         TimerDisplay(
           remaining: (duration - elapsed).clamp(0, duration),
@@ -216,15 +216,5 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
         ),
       _ => const SizedBox(height: 80),
     };
-  }
-
-  void _syncAnimController(BreathingSessionState state) {
-    // Update animation phase to match session phase
-    if (state is BreathingSessionRunning) {
-      if (_animController.currentPhase != state.phase) {
-        // Phase changed by the session notifier - the animation controller
-        // handles its own phase transitions via startCycle()
-      }
-    }
   }
 }

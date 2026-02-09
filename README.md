@@ -1,5 +1,9 @@
 # Breath Thingy
 
+![Flutter](https://img.shields.io/badge/Flutter-3.38+-02569B?logo=flutter&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Platforms](https://img.shields.io/badge/Platforms-Android%20|%20iOS%20|%20Web-blue)
+
 A simple, free, open-source breathing exercise app. No ads, no subscriptions, no tracking. Just breathe.
 
 Built with Flutter, runs on Android, iOS and Web.
@@ -25,7 +29,7 @@ You configure your inhale/hold/exhale times, pick an animation, and start breath
 
 ## Screenshots
 
-<!-- TODO: Add screenshots -->
+*Coming soon*
 
 ## Getting Started
 
@@ -38,8 +42,8 @@ You configure your inhale/hold/exhale times, pick an animation, and start breath
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/breath-thingy.git
-cd breath-thingy
+git clone https://github.com/daniel-pimenta-cc/breath_thingy.git
+cd breath_thingy
 
 # Install dependencies
 flutter pub get
@@ -121,20 +125,15 @@ running/paused --> completed --> idle (reset)
 
 ## Contributing
 
-Contributions are welcome. Some ideas:
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get started.
+
+Some ideas for contributions:
 
 - New animations (the architecture makes it easy - just add a painter + widget)
 - Sound/haptic feedback on phase changes
 - Preset breathing patterns (4-7-8, box breathing, etc.)
 - Session history/statistics
 - Localization
-
-To add a new animation:
-
-1. Create a painter in `animations/painters/` extending `BreathingAnimationPainter`
-2. Create a widget in `animations/widgets/` extending `BreathingAnimation`
-3. Add an entry to the `BreathingAnimStyle` enum
-4. Add the case to `BreathingAnimationSwitcher`
 
 ## License
 

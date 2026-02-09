@@ -108,8 +108,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                               controller: _previewController,
                               onTap: () {
                                 ref
-                                    .read(breathingAnimStyleNotifierProvider
-                                        .notifier)
+                                    .read(
+                                      breathingAnimStyleNotifierProvider
+                                          .notifier,
+                                    )
                                     .select(style);
                               },
                             ),
@@ -135,7 +137,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                       // Cycle total badge
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 4),
+                          horizontal: 12,
+                          vertical: 4,
+                        ),
                         decoration: BoxDecoration(
                           color: AppColors.softTeal.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
@@ -170,8 +174,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                           ),
                           Expanded(
                             flex: exhale,
-                            child:
-                                Container(color: AppColors.exhaleCoralSoft),
+                            child: Container(color: AppColors.exhaleCoralSoft),
                           ),
                         ],
                       ),

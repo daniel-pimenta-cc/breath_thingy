@@ -22,7 +22,6 @@ sealed class BreathingSessionState with _$BreathingSessionState {
     required double phaseDuration,
   }) = BreathingSessionPaused;
 
-  const factory BreathingSessionState.completed({
-    required int totalCycles,
-  }) = BreathingSessionCompleted;
+  const factory BreathingSessionState.completed({required int totalCycles}) =
+      BreathingSessionCompleted;
 }

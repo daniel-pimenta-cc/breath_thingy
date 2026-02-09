@@ -83,14 +83,28 @@ class PolygonMorphPainter extends BreathingAnimationPainter {
     canvas.drawCircle(center, radius, paint);
   }
 
-  void _drawPolygon(Canvas canvas, Offset center, double radius, int sides,
-      double rotation, Color color, double glowIntensity) {
+  void _drawPolygon(
+    Canvas canvas,
+    Offset center,
+    double radius,
+    int sides,
+    double rotation,
+    Color color,
+    double glowIntensity,
+  ) {
     // Glow
     if (glowIntensity > 0) {
       final glowPaint = Paint()
         ..color = color.withValues(alpha: 0.3 * glowIntensity)
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
-      _drawPolygonPath(canvas, center, radius * 1.05, sides, rotation, glowPaint);
+      _drawPolygonPath(
+        canvas,
+        center,
+        radius * 1.05,
+        sides,
+        rotation,
+        glowPaint,
+      );
     }
 
     // Fill
@@ -109,8 +123,14 @@ class PolygonMorphPainter extends BreathingAnimationPainter {
     _drawPolygonPath(canvas, center, radius, sides, rotation, strokePaint);
   }
 
-  void _drawPolygonPath(Canvas canvas, Offset center, double radius, int sides,
-      double rotation, Paint paint) {
+  void _drawPolygonPath(
+    Canvas canvas,
+    Offset center,
+    double radius,
+    int sides,
+    double rotation,
+    Paint paint,
+  ) {
     final path = Path();
     for (int i = 0; i <= sides; i++) {
       final angle = (2 * pi * i / sides) - pi / 2 + rotation;
@@ -128,8 +148,13 @@ class PolygonMorphPainter extends BreathingAnimationPainter {
     canvas.drawPath(path, paint);
   }
 
-  void _drawBurstParticles(Canvas canvas, Offset center, double maxRadius,
-      double t, Color color) {
+  void _drawBurstParticles(
+    Canvas canvas,
+    Offset center,
+    double maxRadius,
+    double t,
+    Color color,
+  ) {
     final rng = Random(42);
     for (int i = 0; i < 5; i++) {
       final angle = rng.nextDouble() * 2 * pi;

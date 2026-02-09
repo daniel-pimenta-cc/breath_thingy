@@ -17,9 +17,11 @@ class BreathingConfigRepositoryImpl implements BreathingConfigRepository {
 
   @override
   Future<BreathingConfig> load() async {
-    final inhale = _prefs.getInt(_keyInhale) ?? BreathingDefaults.inhaleDuration;
+    final inhale =
+        _prefs.getInt(_keyInhale) ?? BreathingDefaults.inhaleDuration;
     final hold = _prefs.getInt(_keyHold) ?? BreathingDefaults.holdDuration;
-    final exhale = _prefs.getInt(_keyExhale) ?? BreathingDefaults.exhaleDuration;
+    final exhale =
+        _prefs.getInt(_keyExhale) ?? BreathingDefaults.exhaleDuration;
     final animName = _prefs.getString(_keyAnimation);
 
     final animStyle = animName != null

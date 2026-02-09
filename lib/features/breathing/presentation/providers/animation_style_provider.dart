@@ -11,7 +11,8 @@ class BreathingAnimStyleNotifier extends _$BreathingAnimStyleNotifier {
   @override
   BreathingAnimStyle build() {
     final configAsync = ref.watch(breathingConfigNotifierProvider);
-    return configAsync.valueOrNull?.animationStyle ?? BreathingAnimStyle.polygonMorph;
+    return configAsync.valueOrNull?.animationStyle ??
+        BreathingAnimStyle.polygonMorph;
   }
 
   Future<void> select(BreathingAnimStyle style) async {

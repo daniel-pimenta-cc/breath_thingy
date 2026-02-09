@@ -30,20 +30,20 @@ class BreathingAnimationSwitcher extends StatelessWidget {
   BreathingAnimation _buildAnimation() {
     return switch (style) {
       BreathingAnimStyle.polygonMorph => PolygonMorphAnimation(
-          key: const ValueKey('polygon'),
-          controller: controller,
-          isPreview: isPreview,
-        ),
+        key: const ValueKey('polygon'),
+        controller: controller,
+        isPreview: isPreview,
+      ),
       BreathingAnimStyle.particleGather => ParticleGatherAnimation(
-          key: const ValueKey('particle'),
-          controller: controller,
-          isPreview: isPreview,
-        ),
+        key: const ValueKey('particle'),
+        controller: controller,
+        isPreview: isPreview,
+      ),
       BreathingAnimStyle.rippleRings => RippleRingsAnimation(
-          key: const ValueKey('ripple'),
-          controller: controller,
-          isPreview: isPreview,
-        ),
+        key: const ValueKey('ripple'),
+        controller: controller,
+        isPreview: isPreview,
+      ),
     };
   }
 }
