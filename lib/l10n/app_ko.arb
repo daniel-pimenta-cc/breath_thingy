@@ -1,0 +1,23 @@
+{
+  "@@locale": "ko",
+  "appTitle": "Breath Thingy",
+  "animationSection": "애니메이션",
+  "timesSection": "시간",
+  "cycleDuration": "사이클 {totalCycle}초",
+  "inhaleLabel": "들이쉬기",
+  "holdLabel": "멈추기",
+  "exhaleLabel": "내쉬기",
+  "startExercise": "운동 시작",
+  "configLoadError": "설정 로드 오류",
+  "phaseInhale": "들이쉬세요",
+  "phaseHold": "멈추세요",
+  "phaseExhale": "내쉬세요",
+  "phaseIdle": "준비",
+  "cycleCount": "사이클 {cycle}",
+  "completedCycles": "완료! {cycles} 사이클",
+  "readyToStart": "시작 준비 완료",
+  "cycleProgress": "사이클 {current}/{total}",
+  "animPolygonMorph": "폴리곤",
+  "animParticleGather": "파티클",
+  "animRippleRings": "파동"
+}

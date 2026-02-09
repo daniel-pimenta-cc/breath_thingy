@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../domain/models/breathing_config.dart';
 import '../../domain/models/breathing_session.dart';
 import '../../animations/base/animation_phase_controller.dart';
@@ -52,6 +53,7 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final sessionState = ref.watch(breathingSessionNotifierProvider);
     final selectedStyle = ref.watch(breathingAnimStyleNotifierProvider);
     final configAsync = ref.watch(breathingConfigNotifierProvider);
@@ -102,7 +104,7 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
                         ),
                         if (sessionState is BreathingSessionRunning)
                           Text(
-                            'Ciclo ${sessionState.cycle}',
+                            l10n.cycleCount(sessionState.cycle),
                             style: GoogleFonts.inter(
                               fontSize: 14,
                               color: AppColors.textSecondary,
@@ -116,7 +118,7 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
                   const Spacer(),
 
                   // Phase indicator
-                  _buildPhaseSection(sessionState),
+                  _buildPhaseSection(sessionState, l10n),
 
                   const Gap(16),
 
@@ -169,7 +171,7 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
     );
   }
 
-  Widget _buildPhaseSection(BreathingSessionState state) {
+  Widget _buildPhaseSection(BreathingSessionState state, AppLocalizations l10n) {
     return switch (state) {
       BreathingSessionRunning(phase: final phase) => PhaseIndicator(
         phase: phase,
@@ -178,7 +180,7 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
         phase: phase,
       ),
       BreathingSessionCompleted(totalCycles: final cycles) => Text(
-        'Concluído! $cycles ciclos',
+        l10n.completedCycles(cycles),
         style: GoogleFonts.poppins(
           fontSize: 24,
           fontWeight: FontWeight.w600,
@@ -186,7 +188,7 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
         ),
       ),
       BreathingSessionIdle() => Text(
-        'Pronto para começar',
+        l10n.readyToStart,
         style: GoogleFonts.poppins(
           fontSize: 20,
           fontWeight: FontWeight.w400,

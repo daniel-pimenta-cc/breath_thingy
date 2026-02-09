@@ -1,0 +1,23 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Breath Thingy",
+  "animationSection": "Анимация",
+  "timesSection": "Время",
+  "cycleDuration": "Цикл {totalCycle}с",
+  "inhaleLabel": "Вдох",
+  "holdLabel": "Задержка",
+  "exhaleLabel": "Выдох",
+  "startExercise": "Начать упражнение",
+  "configLoadError": "Ошибка загрузки конфигурации",
+  "phaseInhale": "Вдохните",
+  "phaseHold": "Задержите",
+  "phaseExhale": "Выдохните",
+  "phaseIdle": "Готово",
+  "cycleCount": "Цикл {cycle}",
+  "completedCycles": "Завершено! Циклов: {cycles}",
+  "readyToStart": "Готов к началу",
+  "cycleProgress": "Цикл {current}/{total}",
+  "animPolygonMorph": "Полигоны",
+  "animParticleGather": "Частицы",
+  "animRippleRings": "Волны"
+}

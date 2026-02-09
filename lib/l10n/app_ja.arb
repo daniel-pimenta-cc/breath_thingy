@@ -1,0 +1,23 @@
+{
+  "@@locale": "ja",
+  "appTitle": "Breath Thingy",
+  "animationSection": "アニメーション",
+  "timesSection": "タイミング",
+  "cycleDuration": "サイクル {totalCycle}秒",
+  "inhaleLabel": "吸う",
+  "holdLabel": "止める",
+  "exhaleLabel": "吐く",
+  "startExercise": "エクササイズ開始",
+  "configLoadError": "設定の読み込みエラー",
+  "phaseInhale": "吸って",
+  "phaseHold": "止めて",
+  "phaseExhale": "吐いて",
+  "phaseIdle": "準備完了",
+  "cycleCount": "サイクル {cycle}",
+  "completedCycles": "完了！{cycles}サイクル",
+  "readyToStart": "開始準備完了",
+  "cycleProgress": "サイクル {current}/{total}",
+  "animPolygonMorph": "ポリゴン",
+  "animParticleGather": "パーティクル",
+  "animRippleRings": "波紋"
+}

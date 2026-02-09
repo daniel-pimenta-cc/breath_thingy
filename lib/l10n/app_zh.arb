@@ -1,0 +1,23 @@
+{
+  "@@locale": "zh",
+  "appTitle": "Breath Thingy",
+  "animationSection": "动画",
+  "timesSection": "时间",
+  "cycleDuration": "周期 {totalCycle}秒",
+  "inhaleLabel": "吸气",
+  "holdLabel": "屏息",
+  "exhaleLabel": "呼气",
+  "startExercise": "开始练习",
+  "configLoadError": "加载配置出错",
+  "phaseInhale": "吸气",
+  "phaseHold": "屏息",
+  "phaseExhale": "呼气",
+  "phaseIdle": "准备",
+  "cycleCount": "周期 {cycle}",
+  "completedCycles": "完成！{cycles}个周期",
+  "readyToStart": "准备开始",
+  "cycleProgress": "周期 {current}/{total}",
+  "animPolygonMorph": "多边形",
+  "animParticleGather": "粒子",
+  "animRippleRings": "波纹"
+}

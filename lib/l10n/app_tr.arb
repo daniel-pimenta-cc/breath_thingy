@@ -1,0 +1,23 @@
+{
+  "@@locale": "tr",
+  "appTitle": "Breath Thingy",
+  "animationSection": "Animasyon",
+  "timesSection": "Süreler",
+  "cycleDuration": "Döngü {totalCycle}s",
+  "inhaleLabel": "Nefes Al",
+  "holdLabel": "Tut",
+  "exhaleLabel": "Nefes Ver",
+  "startExercise": "Egzersizi Başlat",
+  "configLoadError": "Yapılandırma yüklenirken hata oluştu",
+  "phaseInhale": "Nefes Al",
+  "phaseHold": "Tut",
+  "phaseExhale": "Nefes Ver",
+  "phaseIdle": "Hazır",
+  "cycleCount": "Döngü {cycle}",
+  "completedCycles": "Tamamlandı! {cycles} döngü",
+  "readyToStart": "Başlamaya hazır",
+  "cycleProgress": "Döngü {current}/{total}",
+  "animPolygonMorph": "Çokgenler",
+  "animParticleGather": "Parçacıklar",
+  "animRippleRings": "Dalgalar"
+}

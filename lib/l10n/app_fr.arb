@@ -1,0 +1,23 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Breath Thingy",
+  "animationSection": "Animation",
+  "timesSection": "Durées",
+  "cycleDuration": "Cycle {totalCycle}s",
+  "inhaleLabel": "Inspirer",
+  "holdLabel": "Retenir",
+  "exhaleLabel": "Expirer",
+  "startExercise": "Démarrer l'exercice",
+  "configLoadError": "Erreur de chargement de la configuration",
+  "phaseInhale": "Inspirez",
+  "phaseHold": "Retenez",
+  "phaseExhale": "Expirez",
+  "phaseIdle": "Prêt",
+  "cycleCount": "Cycle {cycle}",
+  "completedCycles": "Terminé ! {cycles} cycles",
+  "readyToStart": "Prêt à commencer",
+  "cycleProgress": "Cycle {current}/{total}",
+  "animPolygonMorph": "Polygones",
+  "animParticleGather": "Particules",
+  "animRippleRings": "Ondes"
+}

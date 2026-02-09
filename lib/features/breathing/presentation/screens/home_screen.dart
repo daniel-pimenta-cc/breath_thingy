@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../domain/models/animation_style.dart';
 import '../../domain/models/breathing_config.dart';
 import '../../animations/base/animation_phase_controller.dart';
@@ -55,6 +56,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final selectedStyle = ref.watch(breathingAnimStyleNotifierProvider);
     final configAsync = ref.watch(breathingConfigNotifierProvider);
 
@@ -75,7 +77,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                   const Gap(20),
                   // Header
                   Text(
-                    'Breath Thingy',
+                    l10n.appTitle,
                     style: GoogleFonts.poppins(
                       fontSize: 28,
                       fontWeight: FontWeight.w700,
@@ -86,7 +88,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
 
                   // Animation selection - horizontal row
                   Text(
-                    'Animação',
+                    l10n.animationSection,
                     style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
@@ -130,7 +132,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Tempos',
+                        l10n.timesSection,
                         style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
@@ -148,7 +150,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
-                          'Ciclo ${totalCycle}s',
+                          l10n.cycleDuration(totalCycle),
                           style: GoogleFonts.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.w600,
@@ -186,7 +188,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                   const Gap(16),
 
                   DurationPicker(
-                    label: 'Inspirar',
+                    label: l10n.inhaleLabel,
                     value: inhale,
                     color: AppColors.inhaleBlue,
                     onChanged: (v) {
@@ -196,7 +198,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                   ),
                   const Gap(12),
                   DurationPicker(
-                    label: 'Segurar',
+                    label: l10n.holdLabel,
                     value: hold,
                     color: AppColors.holdAmber,
                     onChanged: (v) {
@@ -206,7 +208,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                   ),
                   const Gap(12),
                   DurationPicker(
-                    label: 'Expirar',
+                    label: l10n.exhaleLabel,
                     value: exhale,
                     color: AppColors.exhaleCoralSoft,
                     onChanged: (v) {
@@ -228,7 +230,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                           const Icon(Icons.play_arrow_rounded, size: 24),
                           const Gap(8),
                           Text(
-                            'Iniciar Exercício',
+                            l10n.startExercise,
                             style: GoogleFonts.poppins(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
@@ -246,7 +248,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (_, _) => Center(
             child: Text(
-              'Erro ao carregar configuração',
+              l10n.configLoadError,
               style: GoogleFonts.inter(color: AppColors.textSecondary),
             ),
           ),

@@ -7,8 +7,4 @@ abstract final class DurationFormatter {
     final secs = remainingSeconds.ceil();
     return '$secs';
   }
-
-  static String formatCycle(int current, int total) {
-    return 'Ciclo $current/$total';
-  }
 }

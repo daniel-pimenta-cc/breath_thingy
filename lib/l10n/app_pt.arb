@@ -1,0 +1,54 @@
+{
+  "@@locale": "pt",
+  "appTitle": "Breath Thingy",
+  "animationSection": "Animação",
+  "timesSection": "Tempos",
+  "cycleDuration": "Ciclo {totalCycle}s",
+  "@cycleDuration": {
+    "placeholders": {
+      "totalCycle": {
+        "type": "int"
+      }
+    }
+  },
+  "inhaleLabel": "Inspirar",
+  "holdLabel": "Segurar",
+  "exhaleLabel": "Expirar",
+  "startExercise": "Iniciar Exercício",
+  "configLoadError": "Erro ao carregar configuração",
+  "phaseInhale": "Inspire",
+  "phaseHold": "Segure",
+  "phaseExhale": "Expire",
+  "phaseIdle": "Pronto",
+  "cycleCount": "Ciclo {cycle}",
+  "@cycleCount": {
+    "placeholders": {
+      "cycle": {
+        "type": "int"
+      }
+    }
+  },
+  "completedCycles": "Concluído! {cycles} ciclos",
+  "@completedCycles": {
+    "placeholders": {
+      "cycles": {
+        "type": "int"
+      }
+    }
+  },
+  "readyToStart": "Pronto para começar",
+  "cycleProgress": "Ciclo {current}/{total}",
+  "@cycleProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "animPolygonMorph": "Polígonos",
+  "animParticleGather": "Partículas",
+  "animRippleRings": "Ondas"
+}

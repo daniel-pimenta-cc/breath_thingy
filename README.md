@@ -26,6 +26,7 @@ You configure your inhale/hold/exhale times, pick an animation, and start breath
 - **Persistent settings** - Your config is saved locally and restored on next launch
 - **Dark theme** - Easy on the eyes, designed for relaxation
 - **Fullscreen immersive mode** - No distractions during the exercise
+- **12 languages** - Auto-detects device language (see [Supported Languages](#supported-languages))
 
 ## Screenshots
 
@@ -107,6 +108,25 @@ lib/
 | Animations | CustomPainter (no external deps) |
 | Typography | Google Fonts (Poppins + Inter) |
 
+## Supported Languages
+
+| Language | Locale | Status |
+|----------|--------|--------|
+| Português | pt | Verified |
+| English | en | Verified |
+| Español | es | AI-translated |
+| Français | fr | AI-translated |
+| Italiano | it | AI-translated |
+| Deutsch | de | AI-translated |
+| Nederlands | nl | AI-translated |
+| Türkçe | tr | AI-translated |
+| Русский | ru | AI-translated |
+| 日本語 | ja | AI-translated |
+| 한국어 | ko | AI-translated |
+| 中文 | zh | AI-translated |
+
+> **Note:** Only Portuguese and English have been manually verified. All other translations were generated using AI and may contain inaccuracies. If you're a native speaker and spot an error, PRs are welcome!
+
 ## How It Works
 
 The core of the app is the `AnimationPhaseController`, which chains three `AnimationController`s (one per phase) using `async/await` with `forward().orCancel`. Each CustomPainter receives this controller as its repaint listenable, so frames are only painted when values change.
@@ -133,7 +153,7 @@ Some ideas for contributions:
 - Sound/haptic feedback on phase changes
 - Preset breathing patterns (4-7-8, box breathing, etc.)
 - Session history/statistics
-- Localization
+- Fix or improve AI-generated translations
 
 ## License
 

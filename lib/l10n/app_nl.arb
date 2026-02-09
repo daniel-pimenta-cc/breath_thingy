@@ -1,0 +1,23 @@
+{
+  "@@locale": "nl",
+  "appTitle": "Breath Thingy",
+  "animationSection": "Animatie",
+  "timesSection": "Tijden",
+  "cycleDuration": "Cyclus {totalCycle}s",
+  "inhaleLabel": "Inademen",
+  "holdLabel": "Vasthouden",
+  "exhaleLabel": "Uitademen",
+  "startExercise": "Start oefening",
+  "configLoadError": "Fout bij laden van configuratie",
+  "phaseInhale": "Adem in",
+  "phaseHold": "Vasthouden",
+  "phaseExhale": "Adem uit",
+  "phaseIdle": "Klaar",
+  "cycleCount": "Cyclus {cycle}",
+  "completedCycles": "Klaar! {cycles} cycli",
+  "readyToStart": "Klaar om te beginnen",
+  "cycleProgress": "Cyclus {current}/{total}",
+  "animPolygonMorph": "Polygonen",
+  "animParticleGather": "Deeltjes",
+  "animRippleRings": "Golven"
+}

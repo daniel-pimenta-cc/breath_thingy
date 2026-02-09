@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../domain/models/breathing_phase.dart';
 
 class PhaseIndicator extends StatelessWidget {
@@ -18,6 +19,7 @@ class PhaseIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 400),
       transitionBuilder: (child, animation) {
@@ -39,7 +41,7 @@ class PhaseIndicator extends StatelessWidget {
         );
       },
       child: Text(
-        phase.label,
+        phase.label(l10n),
         key: ValueKey(phase),
         style: GoogleFonts.poppins(
           fontSize: 28,
