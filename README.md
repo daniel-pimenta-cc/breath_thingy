@@ -1,12 +1,22 @@
-# Breath Thingy
+<p align="center">
+  <img src="assets/app_icon.png" width="120" alt="Breath Thingy icon">
+</p>
 
-![Flutter](https://img.shields.io/badge/Flutter-3.38+-02569B?logo=flutter&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Platforms](https://img.shields.io/badge/Platforms-Android%20|%20iOS%20|%20Web-blue)
+<h1 align="center">Breath Thingy</h1>
 
-A simple, free, open-source breathing exercise app. No ads, no subscriptions, no tracking. Just breathe.
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-3.38+-02569B?logo=flutter&logoColor=white" alt="Flutter">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
+  <img src="https://img.shields.io/badge/Android-Tested-34A853?logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/iOS-Untested-lightgrey?logo=apple&logoColor=white" alt="iOS">
+  <img src="https://img.shields.io/badge/Web-Untested-lightgrey?logo=googlechrome&logoColor=white" alt="Web">
+</p>
 
-Built with Flutter, runs on Android, iOS and Web.
+<p align="center">
+  A simple, free, open-source breathing exercise app. No ads, no subscriptions, no tracking. Just breathe.
+</p>
+
+> **Platform note:** Only Android has been tested. iOS and Web should work without issues since the app uses only cross-platform APIs, but they haven't been verified yet.
 
 ## Why?
 
@@ -30,7 +40,13 @@ You configure your inhale/hold/exhale times, pick an animation, and start breath
 
 ## Screenshots
 
-*Coming soon*
+<p align="center">
+  <img src="screenshots/1.jpg" width="230" alt="Home screen">
+  &nbsp;&nbsp;
+  <img src="screenshots/3.jpg" width="230" alt="Polygon Morph - Hold phase">
+  &nbsp;&nbsp;
+  <img src="screenshots/2.jpg" width="230" alt="Ripple Rings - Exhale phase">
+</p>
 
 ## Getting Started
 
