@@ -19,5 +19,7 @@
   "cycleProgress": "Döngü {current}/{total}",
   "animPolygonMorph": "Çokgenler",
   "animParticleGather": "Parçacıklar",
-  "animRippleRings": "Dalgalar"
+  "animRippleRings": "Dalgalar",
+  "feedbackSection": "Geri Bildirim",
+  "hapticLabel": "Titreşim"
 }

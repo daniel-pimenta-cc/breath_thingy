@@ -19,5 +19,7 @@
   "cycleProgress": "Cyclus {current}/{total}",
   "animPolygonMorph": "Polygonen",
   "animParticleGather": "Deeltjes",
-  "animRippleRings": "Golven"
+  "animRippleRings": "Golven",
+  "feedbackSection": "Feedback",
+  "hapticLabel": "Trillen"
 }

@@ -11,6 +11,7 @@ import '../../domain/models/breathing_config.dart';
 import '../../animations/base/animation_phase_controller.dart';
 import '../providers/animation_style_provider.dart';
 import '../providers/breathing_config_provider.dart';
+import '../providers/feedback_config_provider.dart';
 import '../widgets/animation_preview_card.dart';
 import '../widgets/duration_picker.dart';
 
@@ -218,6 +219,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                   ),
                   const Gap(28),
 
+                  // Feedback section
+                  _buildFeedbackSection(l10n),
+                  const Gap(28),
+
                   // Start Button
                   SizedBox(
                     width: double.infinity,
@@ -254,6 +259,59 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildFeedbackSection(AppLocalizations l10n) {
+    final feedbackConfigAsync = ref.watch(feedbackConfigNotifierProvider);
+
+    return feedbackConfigAsync.when(
+      data: (feedbackConfig) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            l10n.feedbackSection,
+            style: GoogleFonts.inter(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              color: AppColors.textSecondary,
+            ),
+          ),
+          const Gap(8),
+
+          // Haptic toggle
+          Container(
+            decoration: BoxDecoration(
+              color: AppColors.surfaceLight.withValues(alpha: 0.5),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: SwitchListTile(
+              title: Text(
+                l10n.hapticLabel,
+                style: GoogleFonts.inter(
+                  fontSize: 14,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              value: feedbackConfig.hapticEnabled,
+              onChanged: (_) {
+                ref
+                    .read(feedbackConfigNotifierProvider.notifier)
+                    .toggleHaptic();
+              },
+              activeThumbColor: AppColors.softTeal,
+              activeTrackColor: AppColors.softTeal.withValues(alpha: 0.3),
+              dense: true,
+              contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+          ),
+        ],
+      ),
+      loading: () => const SizedBox.shrink(),
+      error: (_, _) => const SizedBox.shrink(),
     );
   }
 }

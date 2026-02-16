@@ -19,5 +19,7 @@
   "cycleProgress": "Ciclo {current}/{total}",
   "animPolygonMorph": "Polígonos",
   "animParticleGather": "Partículas",
-  "animRippleRings": "Ondas"
+  "animRippleRings": "Ondas",
+  "feedbackSection": "Feedback",
+  "hapticLabel": "Vibración"
 }

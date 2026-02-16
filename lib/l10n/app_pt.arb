@@ -50,5 +50,7 @@
   },
   "animPolygonMorph": "Polígonos",
   "animParticleGather": "Partículas",
-  "animRippleRings": "Ondas"
+  "animRippleRings": "Ondas",
+  "feedbackSection": "Feedback",
+  "hapticLabel": "Vibração"
 }

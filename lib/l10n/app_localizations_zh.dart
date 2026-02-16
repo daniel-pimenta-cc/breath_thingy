@@ -75,4 +75,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get animRippleRings => '波纹';
+
+  @override
+  String get feedbackSection => '反馈';
+
+  @override
+  String get hapticLabel => '振动';
 }

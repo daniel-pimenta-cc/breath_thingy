@@ -75,4 +75,10 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get animRippleRings => 'Golven';
+
+  @override
+  String get feedbackSection => 'Feedback';
+
+  @override
+  String get hapticLabel => 'Trillen';
 }

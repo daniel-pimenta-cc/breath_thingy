@@ -11,9 +11,11 @@ import '../../domain/models/breathing_config.dart';
 import '../../domain/models/breathing_session.dart';
 import '../../animations/base/animation_phase_controller.dart';
 import '../../animations/widgets/breathing_animation_switcher.dart';
+import '../../services/breathing_feedback_coordinator.dart';
 import '../providers/animation_style_provider.dart';
 import '../providers/breathing_config_provider.dart';
 import '../providers/breathing_session_provider.dart';
+import '../providers/feedback_config_provider.dart';
 import '../widgets/breathing_controls.dart';
 import '../widgets/phase_indicator.dart';
 import '../widgets/timer_display.dart';
@@ -28,11 +30,15 @@ class BreathingScreen extends ConsumerStatefulWidget {
 class _BreathingScreenState extends ConsumerState<BreathingScreen>
     with TickerProviderStateMixin {
   late AnimationPhaseController _animController;
+  final _feedbackCoordinator = BreathingFeedbackCoordinator();
 
   @override
   void initState() {
     super.initState();
-    _animController = AnimationPhaseController(this);
+    _animController = AnimationPhaseController(
+      this,
+      onPhaseChange: _feedbackCoordinator.onPhaseChange,
+    );
 
     // Immersive mode
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
@@ -64,6 +70,11 @@ class _BreathingScreenState extends ConsumerState<BreathingScreen>
         _animController.configure(config);
       });
     }
+
+    // Configure feedback coordinator when feedback config changes
+    ref.watch(feedbackConfigNotifierProvider).whenData((feedbackConfig) {
+      _feedbackCoordinator.configure(feedbackConfig);
+    });
 
     return Scaffold(
       backgroundColor: AppColors.deepNavy,

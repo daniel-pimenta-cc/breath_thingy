@@ -75,4 +75,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get animRippleRings => 'Волны';
+
+  @override
+  String get feedbackSection => 'Обратная связь';
+
+  @override
+  String get hapticLabel => 'Вибрация';
 }

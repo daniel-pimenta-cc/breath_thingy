@@ -75,4 +75,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get animRippleRings => '파동';
+
+  @override
+  String get feedbackSection => '피드백';
+
+  @override
+  String get hapticLabel => '진동';
 }

@@ -19,5 +19,7 @@
   "cycleProgress": "周期 {current}/{total}",
   "animPolygonMorph": "多边形",
   "animParticleGather": "粒子",
-  "animRippleRings": "波纹"
+  "animRippleRings": "波纹",
+  "feedbackSection": "反馈",
+  "hapticLabel": "振动"
 }

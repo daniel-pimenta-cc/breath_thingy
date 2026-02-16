@@ -19,5 +19,7 @@
   "cycleProgress": "Zyklus {current}/{total}",
   "animPolygonMorph": "Polygone",
   "animParticleGather": "Partikel",
-  "animRippleRings": "Wellen"
+  "animRippleRings": "Wellen",
+  "feedbackSection": "Feedback",
+  "hapticLabel": "Vibration"
 }

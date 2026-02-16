@@ -19,5 +19,7 @@
   "cycleProgress": "사이클 {current}/{total}",
   "animPolygonMorph": "폴리곤",
   "animParticleGather": "파티클",
-  "animRippleRings": "파동"
+  "animRippleRings": "파동",
+  "feedbackSection": "피드백",
+  "hapticLabel": "진동"
 }

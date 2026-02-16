@@ -75,4 +75,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get animRippleRings => 'Dalgalar';
+
+  @override
+  String get feedbackSection => 'Geri Bildirim';
+
+  @override
+  String get hapticLabel => 'Titreşim';
 }

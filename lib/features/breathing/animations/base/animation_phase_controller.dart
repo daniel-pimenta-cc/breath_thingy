@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import '../../domain/models/breathing_config.dart';
 import '../../domain/models/breathing_phase.dart';
 
+typedef PhaseChangeCallback = void Function(BreathingPhase phase);
+
 class AnimationPhaseController extends ChangeNotifier {
-  AnimationPhaseController(this._vsync);
+  AnimationPhaseController(this._vsync, {this.onPhaseChange});
 
   final TickerProvider _vsync;
+  PhaseChangeCallback? onPhaseChange;
 
   late AnimationController _inhaleController;
   late AnimationController _holdController;
@@ -68,6 +71,7 @@ class AnimationPhaseController extends ChangeNotifier {
     while (_isRunning) {
       // Inhale
       _currentPhase = BreathingPhase.inhale;
+      onPhaseChange?.call(BreathingPhase.inhale);
       notifyListeners();
       _inhaleController.reset();
       try {
@@ -79,6 +83,7 @@ class AnimationPhaseController extends ChangeNotifier {
 
       // Hold
       _currentPhase = BreathingPhase.hold;
+      onPhaseChange?.call(BreathingPhase.hold);
       notifyListeners();
       _holdController.reset();
       try {
@@ -90,6 +95,7 @@ class AnimationPhaseController extends ChangeNotifier {
 
       // Exhale
       _currentPhase = BreathingPhase.exhale;
+      onPhaseChange?.call(BreathingPhase.exhale);
       notifyListeners();
       _exhaleController.reset();
       try {
@@ -117,6 +123,7 @@ class AnimationPhaseController extends ChangeNotifier {
     _isRunning = false;
     _isPaused = false;
     _currentPhase = BreathingPhase.idle;
+    onPhaseChange?.call(BreathingPhase.idle);
     _inhaleController.reset();
     _holdController.reset();
     _exhaleController.reset();

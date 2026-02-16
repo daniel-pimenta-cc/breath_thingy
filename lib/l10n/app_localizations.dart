@@ -237,6 +237,18 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Ondas'**
   String get animRippleRings;
+
+  /// No description provided for @feedbackSection.
+  ///
+  /// In pt, this message translates to:
+  /// **'Feedback'**
+  String get feedbackSection;
+
+  /// No description provided for @hapticLabel.
+  ///
+  /// In pt, this message translates to:
+  /// **'Vibração'**
+  String get hapticLabel;
 }
 
 class _AppLocalizationsDelegate

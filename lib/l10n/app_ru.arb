@@ -19,5 +19,7 @@
   "cycleProgress": "Цикл {current}/{total}",
   "animPolygonMorph": "Полигоны",
   "animParticleGather": "Частицы",
-  "animRippleRings": "Волны"
+  "animRippleRings": "Волны",
+  "feedbackSection": "Обратная связь",
+  "hapticLabel": "Вибрация"
 }

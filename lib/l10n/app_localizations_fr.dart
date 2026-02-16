@@ -75,4 +75,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get animRippleRings => 'Ondes';
+
+  @override
+  String get feedbackSection => 'Retour';
+
+  @override
+  String get hapticLabel => 'Vibration';
 }
